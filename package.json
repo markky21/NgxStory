@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "ngx-story:start": "ng serve NgxStory",
+    "ngx-story:build": "ng build NgxStory --prod",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
