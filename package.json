@@ -5,7 +5,7 @@
     "ng": "ng",
     "ngx-story:start": "ng serve NgxStory",
     "ngx-story:build": "ng build NgxStory --prod",
-    "ngx-story:build:ghp": "ng build NgxStory --prod --base-href \"https://markky21.github.io/NgxStory/\"",
+    "ngx-story:build:ghp": "ng build NgxStory --aot=false --base-href \"https://markky21.github.io/NgxStory/\" --deploy-url \"https://markky21.github.io/NgxStory/\"",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
