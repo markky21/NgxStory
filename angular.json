@@ -130,6 +130,134 @@
           }
         }
       }
+    },
+    "NgxStory": {
+      "root": "projects/NgxStory/",
+      "sourceRoot": "projects/NgxStory/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/NgxStory",
+            "index": "projects/NgxStory/src/index.html",
+            "main": "projects/NgxStory/src/main.ts",
+            "polyfills": "projects/NgxStory/src/polyfills.ts",
+            "tsConfig": "projects/NgxStory/tsconfig.app.json",
+            "assets": [
+              "projects/NgxStory/src/favicon.ico",
+              "projects/NgxStory/src/assets"
+            ],
+            "styles": [
+              "projects/NgxStory/src/styles.scss"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/NgxStory/src/environments/environment.ts",
+                  "with": "projects/NgxStory/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "NgxStory:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "NgxStory:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "NgxStory:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/NgxStory/src/test.ts",
+            "polyfills": "projects/NgxStory/src/polyfills.ts",
+            "tsConfig": "projects/NgxStory/tsconfig.spec.json",
+            "karmaConfig": "projects/NgxStory/karma.conf.js",
+            "styles": [
+              "projects/NgxStory/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/NgxStory/src/favicon.ico",
+              "projects/NgxStory/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/NgxStory/tsconfig.app.json",
+              "projects/NgxStory/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "NgxStory-e2e": {
+      "root": "projects/NgxStory-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/NgxStory-e2e/protractor.conf.js",
+            "devServerTarget": "NgxStory:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "NgxStory:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/NgxStory-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "NgxStorybook"

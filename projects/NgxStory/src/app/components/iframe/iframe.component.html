@@ -1,0 +1,8 @@
+<iframe
+  #iframe
+  [attr.src]="storyRoute"
+  [height]="!deviceViewPort.orientationHorizontal ? deviceViewPort.width : deviceViewPort.height"
+  [width]="!deviceViewPort.orientationHorizontal ? deviceViewPort.height : deviceViewPort.width"
+  webkitallowfullscreen mozallowfullscreen allowfullscreen
+  id="Iframe"
+></iframe>

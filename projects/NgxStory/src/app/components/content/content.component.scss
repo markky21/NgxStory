@@ -1,0 +1,19 @@
+@import "../../../styles/mixins";
+
+#main {
+  height: 100%;
+  width: 100%;
+  @include display-grid(1fr 300px, 1fr);
+  grid-template-areas:
+    'iframe'
+    'config';
+}
+
+#iframe {
+  @include grid-cell(iframe, 1, 1);
+  overflow: scroll;
+}
+
+#config {
+  @include grid-cell(config, 2, 1);
+}

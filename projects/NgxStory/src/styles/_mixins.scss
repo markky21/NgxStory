@@ -1,0 +1,49 @@
+
+/******************************
+  Layout Grid
+******************************/
+@mixin display-grid($rows, $columns, $padding-top-bottom: 0, $padding-left-right: 0, $grid-gap: 8px) {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: $columns;
+  -ms-grid-rows: $rows;
+  grid-template-columns: $columns;
+  grid-template-rows: $rows;
+
+  padding: ($padding-top-bottom - $grid-gap/2) ($padding-left-right - $grid-gap/2);
+  @supports (grid-gap: $grid-gap) {
+    padding: $padding-top-bottom $padding-left-right;
+    grid-gap: #{$grid-gap} #{$grid-gap};
+  }
+}
+
+@mixin grid-cell($area, $row, $column, $row-span: 1, $col-span: 1, $grid-gap: 8px) {
+  -ms-grid-row: $row;
+  -ms-grid-column: $column;
+  -ms-grid-row-span: $row-span;
+  -ms-grid-column-span: $col-span;
+
+  grid-column: $column;
+  grid-row: $row;
+  grid-column-end: span $col-span;
+  grid-row-end: span $row-span;
+  grid-area: $area;
+
+  padding: $grid-gap / 2;
+  @supports (grid-gap: $grid-gap) {
+    padding: 0;
+  }
+}
+
+@mixin grid-cell-aligned-to-input($value: $storyapp-columns-gap) {
+  transform: translateY($value);
+  display: inline-block;
+}
+
+@mixin grid-cell-justify-end() {
+  justify-self: end;
+  text-align: right;
+  > * {
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,14 @@
+.type-icon {
+  color: #757575;
+  margin-right: 0px;
+}
+
+.mat-button:not(:last-child),
+.mat-raised-button:not(:last-child),
+.mat-icon-button:not(:last-child),
+.mat-stroked-button:not(:last-child),
+.mat-flat-button:not(:last-child),
+.mat-fab:not(:last-child),
+.mat-mini-fab:not(:last-child) {
+  margin-right: 0px;
+}
