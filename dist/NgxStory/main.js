@@ -1014,7 +1014,7 @@ var routes = [
     {
         path: 'story',
         component: _components_stories_wrapper_stories_wrapper_component__WEBPACK_IMPORTED_MODULE_7__["StoriesWrapperComponent"],
-        children: [{ path: '', redirectTo: '', pathMatch: 'full' }].concat(_stories_config__WEBPACK_IMPORTED_MODULE_6__["storiesRoutes"])
+        children: [{ path: '', redirectTo: '', pathMatch: 'prefix' }].concat(_stories_config__WEBPACK_IMPORTED_MODULE_6__["storiesRoutes"])
     },
     { path: '**', component: _components_nav_nav_component__WEBPACK_IMPORTED_MODULE_5__["NavComponent"] }
 ];

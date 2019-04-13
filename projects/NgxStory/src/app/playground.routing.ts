@@ -13,7 +13,7 @@ const routes: Routes = [
   {
     path: 'story',
     component: StoriesWrapperComponent,
-    children: [{ path: '', redirectTo: '', pathMatch: 'full' }, ...storiesRoutes]
+    children: [{ path: '', redirectTo: '', pathMatch: 'prefix' }, ...storiesRoutes]
   },
   { path: '**', component: NavComponent }
 ];
